@@ -8,6 +8,7 @@ import Medication from './Medication';
 import Mod from './Mod';
 import Hom from './Hom';
 import Any from './Any';
+import GetStarted from './GetStarted';
 
 const Form = () => {
   const [page, setPage] = useState(0);
@@ -25,7 +26,7 @@ const Form = () => {
   const PageDisplay = () => {
     switch (page) {
       case 0:
-        return <Noc />;
+        return <GetStarted />;
       case 1:
         return <Aom />;
       case 2:
@@ -55,6 +56,7 @@ const Form = () => {
         >
           <div>{PageDisplay()}</div>
         </CSSTransition>
+        <div>
         <button
           disabled={page === 0}
           onClick={() => {
@@ -71,6 +73,7 @@ const Form = () => {
         >
           Next
         </button>
+      </div>
       </div>
     </div>
   );
