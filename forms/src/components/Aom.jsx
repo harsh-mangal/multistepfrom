@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Aom = () => {
+const Aom = (props) => {
   return (
     <div className="Container">
          <h4>Age of Mother</h4>
