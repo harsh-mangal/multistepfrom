@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import './Forms.css';
-import Noc from './Noc';
 import Aom from './Aom';
 import Aof from './Aof';
 import Medication from './Medication';
@@ -54,26 +53,26 @@ const Form = () => {
           classNames="fade"
           unmountOnExit
         >
-          <div>{PageDisplay()}</div>
+          <div key={page}>{PageDisplay()}</div>
         </CSSTransition>
         <div>
-        <button
-          disabled={page === 0}
-          onClick={() => {
-            setPage((currPage) => currPage - 1);
-          }}
-        >
-          Prev
-        </button>
-        <button
-          disabled={page === FormTitles.length - 1}
-          onClick={() => {
-            setPage((currPage) => currPage + 1);
-          }}
-        >
-          Next
-        </button>
-      </div>
+          <button
+            disabled={page === 0}
+            onClick={() => {
+              setPage((currPage) => currPage - 1);
+            }}
+          >
+            Prev
+          </button>
+          <button
+            disabled={page === FormTitles.length - 1}
+            onClick={() => {
+              setPage((currPage) => currPage + 1);
+            }}
+          >
+            Next
+          </button>
+        </div>
       </div>
     </div>
   );
